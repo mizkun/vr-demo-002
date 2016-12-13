@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1061003249388",
+    "firebase_url": "https://vr-demos.firebaseio.com",
+    "project_id": "vr-demos",
+    "storage_bucket": "vr-demos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061003249388:android:1118cef19ab6cb2d",
+        "android_client_info": {
+          "package_name": "com.mizutani.vrdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061003249388-b67u9g36op26okt05sqo0dan5t7h4r3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
