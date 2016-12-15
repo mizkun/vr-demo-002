@@ -136,7 +136,12 @@
      <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrFPS.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrIntent.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\AdsClicker.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\AdsHandler.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\AdsRequest.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\Clicker.cs" />
      <Compile Include="Assets\MyAssets\Scripts\GazeCanvasEvent.cs" />
+     <Compile Include="Assets\MyAssets\Scripts\HeadLookWalk.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />

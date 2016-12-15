@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GazeCanvasEvent : MonoBehaviour {
 
 	public Image ProgressBar;
 	public Image BackgroundImage;
 	public Text CanvasText;
+	public string next_scene;
 
 	public float speed;
 
@@ -20,7 +22,7 @@ public class GazeCanvasEvent : MonoBehaviour {
 		if (isGazed) {
 			Vector3 progress = ProgressBar.transform.localScale;
 			if (progress.x >= 1.0f) {
-				doSomething ();
+				MoveScene ();
 			} else {
 				progress.x += speed;
 				ProgressBar.transform.localScale = progress;
@@ -39,10 +41,9 @@ public class GazeCanvasEvent : MonoBehaviour {
 		ProgressBar.transform.localScale = progress;
 	}
 
-	void doSomething () {
+	void MoveScene () {
 		isGazed = false;
 		Debug.Log ("gazed");
+		SceneManager.LoadScene (next_scene);
 	}
-
-
 }
