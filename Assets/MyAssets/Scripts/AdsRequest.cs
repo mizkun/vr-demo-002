@@ -19,7 +19,7 @@ public class AdsRequest : MonoBehaviour {
 	void Update () {
 		if (isGazed) {
 			Vector3 progress = ProgressBar.transform.localScale;
-			if (progress.x >= 1.0f) {
+			if (progress.x >= 0.98f) {
 				adsHandler.RequestAd ();
 				isGazed = false;
 			} else {

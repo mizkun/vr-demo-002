@@ -9,7 +9,9 @@ public class GazeCanvasEvent : MonoBehaviour {
 	public Image BackgroundImage;
 	public Text CanvasText;
 	public string next_scene;
-
+	public AnalyticsHandler analyticsHandler;
+	public bool enableDurationTracking = true;
+	
 	public float speed;
 
 	private bool isGazed;
@@ -43,7 +45,10 @@ public class GazeCanvasEvent : MonoBehaviour {
 
 	void MoveScene () {
 		isGazed = false;
-		Debug.Log ("gazed");
+		if (enableDurationTracking) {
+			Debug.Log (analyticsHandler.duration);
+			analyticsHandler.SendEvent ();
+		}
 		SceneManager.LoadScene (next_scene);
 	}
 }

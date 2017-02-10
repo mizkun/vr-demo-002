@@ -8,7 +8,6 @@ public class AdsClicker : MonoBehaviour {
 	public Image ProgressBar;
 	public Image BackgroundImage;
 	public Text CanvasText;
-	public string next_scene;
 	public AdsHandler adsHandler;
 
 	public float speed;
@@ -16,11 +15,11 @@ public class AdsClicker : MonoBehaviour {
 	private bool isGazed;
 
 	void Start () {
-		isGazed = false;	
+		isGazed = false;
 	}
 
 	void Update () {
-		if (isGazed) {
+		if (isGazed && adsHandler.getAdStatus()) {
 			Vector3 progress = ProgressBar.transform.localScale;
 			if (progress.x >= 1.0f) {
 				ClickAds ();

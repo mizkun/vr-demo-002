@@ -40,16 +40,16 @@ public class FirebaseAppDeps : AssetPostprocessor
                 "ProjectSettings"
             });
 
-        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.android.gms", "play-services-base", "9.8+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository" } }, { "repositories", null } });
-        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-common", "9.8+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository", "extra-android-m2repository" } }, { "repositories", null } });
-        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-app-unity", "1.0.0" }, namedArgs: new Dictionary<string, object>() { { "packageIds", null }, { "repositories", new string[] { "Assets/Firebase/m2repository" } } });
+        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.android.gms", "play-services-base", "10+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository" } }, { "repositories", null } });
+        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-common", "10+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository", "extra-android-m2repository" } }, { "repositories", null } });
+        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-app-unity", "1.1.1" }, namedArgs: new Dictionary<string, object>() { { "packageIds", null }, { "repositories", new string[] { "Assets/Firebase/m2repository" } } });
 #elif UNITY_IOS
         Type iosResolver = Google.VersionHandler.FindClass(
             "Google.IOSResolver", "Google.IOSResolver");
         if (iosResolver == null) {
             return;
         }
-        Google.VersionHandler.InvokeStaticMethod(iosResolver, "AddPod", new object[] { "Firebase/Core" }, new Dictionary<string, object>() { { "version", "3.8.0+" }, { "minTargetSdk", "7.0" } });
+        Google.VersionHandler.InvokeStaticMethod(iosResolver, "AddPod", new object[] { "Firebase/Core" }, new Dictionary<string, object>() { { "version", "3.10+" }, { "minTargetSdk", "7.0" } });
 #endif
     }
 

@@ -9,30 +9,34 @@ public class AdsHandler : MonoBehaviour {
 	public const string NativeAdUnitId = "/6499/mizutani_test_unit";
 	public const string TemplateId = "10096530";
 	public const string ImageName = "MainImage";
-	public String AdStatus = "Not Requested Yet";
-
+	public Text CanvasText;
+		
 	private bool nativeAdLoaded;
+	private bool nativeAdShown;
 	private CustomNativeTemplateAd nativeAd;
 
 	void Start () {
 		this.nativeAd = null;
 		this.nativeAdLoaded = false;
+		this.nativeAdShown = false;
 	}
 
 	void Update () {
 		if (this.nativeAdLoaded) {
 			ChangeTextures ();
+			CanvasText.text = "";
 		}
 	}
 
 	public void RequestAd () {
-		Debug.Log("Requested!");
+		Debug.Log("Requested");
 		AdLoader adLoader = new AdLoader.Builder(NativeAdUnitId)
 			.ForCustomNativeAd(TemplateId)
 			.Build();
 		adLoader.OnCustomNativeTemplateAdLoaded += this.HandleCustomNativeAdLoaded;
 		adLoader.OnAdFailedToLoad += this.HandleNativeAdFailedToLoad;
 		adLoader.LoadAd(new AdRequest.Builder().Build());
+		CanvasText.text = "Loading...";
 	}
 
 	private void HandleCustomNativeAdLoaded(object sender, CustomNativeEventArgs args) {
@@ -53,9 +57,14 @@ public class AdsHandler : MonoBehaviour {
 			.material
 			.mainTexture = this.nativeAd.GetTexture2D (ImageName);
 		this.nativeAdLoaded = false;
+		this.nativeAdShown = true;
 	}
 
 	public CustomNativeTemplateAd getNativeAd (){
 		return this.nativeAd;
+	}
+
+	public bool getAdStatus () {
+		return this.nativeAdShown;
 	}
 }

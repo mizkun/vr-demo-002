@@ -40,15 +40,15 @@ public class FirebaseAnalyticsDeps : AssetPostprocessor
                 "ProjectSettings"
             });
 
-        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-analytics", "9.8+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository", "extra-android-m2repository" } }, { "repositories", null } });
-        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-analytics-unity", "1.0.0" }, namedArgs: new Dictionary<string, object>() { { "packageIds", null }, { "repositories", new string[] { "Assets/Firebase/m2repository" } } });
+        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-analytics", "10+" }, namedArgs: new Dictionary<string, object>() { { "packageIds", new string[] { "extra-google-m2repository", "extra-android-m2repository" } }, { "repositories", null } });
+        Google.VersionHandler.InvokeInstanceMethod(svcSupport, "DependOn", new object[] { "com.google.firebase", "firebase-analytics-unity", "1.1.1" }, namedArgs: new Dictionary<string, object>() { { "packageIds", null }, { "repositories", new string[] { "Assets/Firebase/m2repository" } } });
 #elif UNITY_IOS
         Type iosResolver = Google.VersionHandler.FindClass(
             "Google.IOSResolver", "Google.IOSResolver");
         if (iosResolver == null) {
             return;
         }
-        Google.VersionHandler.InvokeStaticMethod(iosResolver, "AddPod", new object[] { "Firebase/Analytics" }, new Dictionary<string, object>() { { "version", "3.8.0+" }, { "minTargetSdk", "7.0" } });
+        Google.VersionHandler.InvokeStaticMethod(iosResolver, "AddPod", new object[] { "Firebase/Analytics" }, new Dictionary<string, object>() { { "version", "3.10+" }, { "minTargetSdk", "7.0" } });
 #endif
     }
 

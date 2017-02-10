@@ -1,5 +1,11 @@
 fileFormatVersion: 2
-guid: 45b960b3695c47fd90cd0743b319b3e7
+guid: 9f2edbf81053418f879076c05f816dc2
+labels:
+- gvh
+- gvh_teditor
+- gvh_v1.1.1
+timeCreated: 1485086647
+licenseType: Free
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
